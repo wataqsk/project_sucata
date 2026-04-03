@@ -11,7 +11,14 @@ config_version=5
 [application]
 
 config/name="projeto_sucata"
+run/main_scene="uid://t711ksiggai1"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
 
 [physics]
 
