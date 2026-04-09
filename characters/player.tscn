@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cb8dmciubuxoe"]
 
-[ext_resource type="PackedScene" uid="uid://c6aoy2pk16cwq" path="res://characters/mannequin_f.glb" id="1_dnjla"]
+[ext_resource type="PackedScene" uid="uid://d2y1qklerpor2" path="res://models/mannequin_f.glb" id="1_dnjla"]
+[ext_resource type="AnimationLibrary" uid="uid://d2pc2n5ev4ue6" path="res://models/ual2_standard.glb" id="2_3eadt"]
+[ext_resource type="AnimationLibrary" uid="uid://ggq38m1k5g87" path="res://models/ual1_standard.glb" id="2_tory2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3eadt"]
 radius = 0.25
@@ -8,8 +10,74 @@ height = 1.8
 
 [node name="Player" type="CharacterBody3D" unique_id=1561012246]
 
-[node name="Mannequin" parent="." unique_id=546347069 instance=ExtResource("1_dnjla")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=596558967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9003906, 0)
 shape = SubResource("CapsuleShape3D_3eadt")
+
+[node name="Mannequin" parent="." unique_id=746141481 instance=ExtResource("1_dnjla")]
+
+[node name="GeneralSkeleton" parent="Mannequin/Armature" parent_id_path=PackedInt32Array(746141481, 1774145458) index="0" unique_id=687242549]
+bones/1/position = Vector3(0.005325817, 0.87689215, -0.08669057)
+bones/1/rotation = Quaternion(-0.044861447, -0.11589603, -0.0052399733, 0.99223393)
+bones/3/rotation = Quaternion(0.0922686, 0.00011257827, 0.00025399006, 0.9957342)
+bones/4/rotation = Quaternion(0.092277884, 0.00032046906, 0.00024740546, 0.9957333)
+bones/5/rotation = Quaternion(-0.09227786, -0.00021681597, -0.00026032366, 0.99573326)
+bones/6/rotation = Quaternion(0.08048006, 0.095740736, 0.00771561, 0.9921176)
+bones/7/rotation = Quaternion(0.48797986, 0.5264472, 0.52653736, -0.45550784)
+bones/8/rotation = Quaternion(-0.060913708, 0.81788146, -0.5720695, 0.009798602)
+bones/9/rotation = Quaternion(0.1919348, -0.65133405, 0.18531422, 0.7103405)
+bones/10/rotation = Quaternion(0.09913024, 0.70686626, 0.0629003, 0.69753635)
+bones/11/rotation = Quaternion(0.6295969, -4.0978193e-08, -4.61936e-06, 0.77692205)
+bones/12/rotation = Quaternion(0.62334186, 2.9802322e-08, -4.261732e-06, 0.78194946)
+bones/13/rotation = Quaternion(0.62334144, -2.2351742e-07, -4.4703484e-06, 0.78194976)
+bones/15/rotation = Quaternion(0.6288943, -0.0297349, -4.470348e-06, 0.7769219)
+bones/16/rotation = Quaternion(0.6227327, -0.02755458, -4.410744e-06, 0.7819494)
+bones/17/rotation = Quaternion(0.6226684, -0.028961532, -4.4703493e-06, 0.78194976)
+bones/19/rotation = Quaternion(0.6630008, -0.044529784, 0.07369417, 0.7436506)
+bones/20/rotation = Quaternion(0.6203661, -0.06229401, 0.015573084, 0.7816796)
+bones/21/rotation = Quaternion(0.62192154, -0.04205184, -4.4703484e-06, 0.78194964)
+bones/23/rotation = Quaternion(0.6291978, -0.022414071, -4.202128e-06, 0.77692205)
+bones/24/rotation = Quaternion(0.6229472, -0.022176376, -4.321337e-06, 0.78194946)
+bones/25/rotation = Quaternion(0.6228982, -0.023505477, -4.5001498e-06, 0.7819497)
+bones/27/rotation = Quaternion(-0.123819165, 0.7195233, 0.2018354, 0.65285325)
+bones/28/rotation = Quaternion(0.18180694, 0.11012423, 0.060063303, 0.9753006)
+bones/29/rotation = Quaternion(0.5994299, 0.27396563, 0.19463211, 0.7264606)
+bones/30/scale = Vector3(1.0001454, 1.0004877, 1.0005833)
+bones/31/rotation = Quaternion(0.5402105, -0.4743804, -0.4747989, -0.5076436)
+bones/32/rotation = Quaternion(0.08947249, 0.8247274, -0.55832595, -0.009563196)
+bones/33/rotation = Quaternion(0.29220855, 0.5426241, -0.20483437, 0.7604053)
+bones/34/rotation = Quaternion(0.12024976, -0.69903094, -0.056890074, 0.702609)
+bones/35/rotation = Quaternion(0.6295971, 3.7252903e-08, 4.172325e-06, 0.7769218)
+bones/36/rotation = Quaternion(0.62334144, 1.825392e-07, 4.470348e-06, 0.7819497)
+bones/37/rotation = Quaternion(0.62334156, 1.00582824e-07, 4.2319293e-06, 0.78194964)
+bones/38/rotation = Quaternion(4.656613e-09, 1, 4.295285e-08, -5.7654454e-08)
+bones/39/rotation = Quaternion(0.6288947, 0.029734796, 4.351139e-06, 0.77692175)
+bones/40/rotation = Quaternion(0.62273216, 0.027554482, 4.5001507e-06, 0.78194976)
+bones/41/rotation = Quaternion(0.62266874, 0.028961398, 4.3213377e-06, 0.78194946)
+bones/42/rotation = Quaternion(-0.02323703, 0.99973, 1.33009905e-08, -1.4671618e-07)
+bones/43/rotation = Quaternion(0.6630007, 0.044529956, -0.07369393, 0.7436508)
+bones/44/rotation = Quaternion(0.62036633, 0.06229363, -0.015572906, 0.7816794)
+bones/45/rotation = Quaternion(0.62192184, 0.04205143, 4.4703484e-06, 0.7819494)
+bones/46/rotation = Quaternion(-0.03375008, 0.99943036, 4.924054e-08, -5.6300287e-08)
+bones/47/rotation = Quaternion(0.6291981, 0.022413792, 4.11272e-06, 0.7769218)
+bones/48/rotation = Quaternion(0.62294656, 0.022176204, 4.470349e-06, 0.7819501)
+bones/49/rotation = Quaternion(0.6228987, 0.02350526, 4.1723247e-06, 0.7819493)
+bones/50/rotation = Quaternion(-0.018857837, 0.9998222, -1.5216912e-08, -2.369153e-07)
+bones/51/rotation = Quaternion(-0.12381923, -0.7195234, -0.2018356, 0.6528533)
+bones/52/rotation = Quaternion(0.18180703, -0.11012423, -0.060063303, 0.97530067)
+bones/53/rotation = Quaternion(0.5994302, -0.2739653, -0.19463223, 0.7264605)
+bones/54/scale = Vector3(1.0001454, 1.0004876, 1.0005835)
+bones/55/rotation = Quaternion(-0.0007797359, 0.12464295, 0.9859192, -0.11147658)
+bones/56/rotation = Quaternion(0.016559927, 0.9819547, -0.15095738, 0.11270645)
+bones/57/rotation = Quaternion(-0.094496295, 0.72866625, -0.6782895, 0.0062798597)
+bones/58/rotation = Quaternion(4.664862e-08, 1, 5.9604645e-08, 2.7766912e-08)
+bones/60/rotation = Quaternion(0.00081509515, -0.1073016, 0.98737305, 0.11653469)
+bones/61/rotation = Quaternion(-0.029956946, 0.9287565, -0.08393447, -0.35981825)
+bones/62/rotation = Quaternion(0.17149909, 0.6457407, -0.7440434, -0.0025765307)
+bones/63/rotation = Quaternion(-6.703263e-08, 1, 8.940697e-08, 2.1454163e-09)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mannequin" unique_id=58122226]
+libraries/ual1_standard = ExtResource("2_tory2")
+libraries/ual2_standard = ExtResource("2_3eadt")
+
+[editable path="Mannequin"]

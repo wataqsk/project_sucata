@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
-uid="uid://b6nmox3mebffg"
-path="res://.godot/imported/mannequin_m.glb-a752196ada15c57d0bf99d7a8efc0f9b.scn"
+type="AnimationLibrary"
+uid="uid://d2pc2n5ev4ue6"
+path="res://.godot/imported/ual2_standard.glb-0c87dd6f7e1c542031291797bc4d3afa.res"
 
 [deps]
 
-source_file="res://characters/mannequin_m.glb"
-dest_files=["res://.godot/imported/mannequin_m.glb-a752196ada15c57d0bf99d7a8efc0f9b.scn"]
+source_file="res://models/ual2_standard.glb"
+dest_files=["res://.godot/imported/ual2_standard.glb-0c87dd6f7e1c542031291797bc4d3afa.res"]
 
 [params]
 
