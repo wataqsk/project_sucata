@@ -8,19 +8,17 @@ class_name Player extends CharacterBody3D
 func handle_turn(delta):
 	var turn_dir = Input.get_axis ("turn_left","turn_right")
 	rotation_degrees.y -= turn_dir * turn_speed * delta
-	
+
 func handle_walk(delta):
 	var input_dir = Input.get_axis("move_backward","move_forward")	
-	var walk_velocity = -basis.z * input_dir * walk_speed * delta
+	var walk_velocity = basis.z * input_dir * walk_speed * delta
 	velocity.x = walk_velocity.x
-	velocity.x = walk_velocity.z
-	
+	velocity.z = walk_velocity.z
+
 func _physics_process(delta: float) -> void:
 	handle_turn(delta)
-	handle_walk(delta)		
-	
+	handle_walk(delta)
 	move_and_slide()
-
 
 #extends CharacterBody3D
 
