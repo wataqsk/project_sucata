@@ -75,6 +75,8 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_h1q25")
 nodes/TimeScale/position = Vector2(365.2587, 103.76477)
 node_connections = [&"output", 0, &"TimeScale", &"OneShot", 0, &"Movement", &"TimeScale", 0, &"OneShot"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_x0jl3"]
+
 [node name="Player" type="CharacterBody3D" unique_id=1561012246]
 script = ExtResource("1_x0jl3")
 
@@ -83,6 +85,66 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9003906, 0)
 shape = SubResource("CapsuleShape3D_3eadt")
 
 [node name="Mannequin" parent="." unique_id=746141481 instance=ExtResource("1_dnjla")]
+
+[node name="GeneralSkeleton" parent="Mannequin/Armature" parent_id_path=PackedInt32Array(746141481, 1918042753) index="0" unique_id=1674301085]
+bones/1/position = Vector3(0.004668877, 0.87346894, -0.08758624)
+bones/1/rotation = Quaternion(-0.038055893, -0.11592927, -0.004445062, 0.99251825)
+bones/3/rotation = Quaternion(0.099653766, 0.000114550465, 0.0002500273, 0.9950221)
+bones/4/rotation = Quaternion(0.09965391, 0.00032640065, 0.00024326077, 0.9950221)
+bones/5/rotation = Quaternion(-0.09965376, -0.00022081632, -0.0002572554, 0.9950221)
+bones/6/rotation = Quaternion(0.067459114, 0.09576642, 0.007370383, 0.99308807)
+bones/7/rotation = Quaternion(0.49458766, 0.5241817, 0.5285828, -0.44857204)
+bones/8/rotation = Quaternion(-0.03984246, 0.82120764, -0.5691534, 0.009748615)
+bones/9/rotation = Quaternion(0.18466312, -0.6658817, 0.18599334, 0.69850385)
+bones/10/rotation = Quaternion(0.09913024, 0.70686626, 0.0629003, 0.69753635)
+bones/11/rotation = Quaternion(0.6295969, -4.0978193e-08, -4.61936e-06, 0.77692205)
+bones/12/rotation = Quaternion(0.62334186, 2.9802322e-08, -4.261732e-06, 0.78194946)
+bones/13/rotation = Quaternion(0.62334144, -2.2351742e-07, -4.4703484e-06, 0.78194976)
+bones/15/rotation = Quaternion(0.6288943, -0.0297349, -4.470348e-06, 0.7769219)
+bones/16/rotation = Quaternion(0.6227327, -0.02755458, -4.410744e-06, 0.7819494)
+bones/17/rotation = Quaternion(0.6226684, -0.028961532, -4.4703493e-06, 0.78194976)
+bones/19/rotation = Quaternion(0.6630008, -0.044529784, 0.07369417, 0.7436506)
+bones/20/rotation = Quaternion(0.6203661, -0.06229401, 0.015573084, 0.7816796)
+bones/21/rotation = Quaternion(0.62192154, -0.04205184, -4.4703484e-06, 0.78194964)
+bones/23/rotation = Quaternion(0.6291978, -0.022414071, -4.202128e-06, 0.77692205)
+bones/24/rotation = Quaternion(0.6229472, -0.022176376, -4.321337e-06, 0.78194946)
+bones/25/rotation = Quaternion(0.6228982, -0.023505477, -4.5001498e-06, 0.7819497)
+bones/27/rotation = Quaternion(-0.123819165, 0.7195233, 0.2018354, 0.65285325)
+bones/28/rotation = Quaternion(0.18180694, 0.11012423, 0.060063303, 0.9753006)
+bones/29/rotation = Quaternion(0.5994299, 0.27396563, 0.19463211, 0.7264606)
+bones/30/scale = Vector3(1.0001454, 1.0004877, 1.0005833)
+bones/31/rotation = Quaternion(0.546704, -0.47290102, -0.47607166, -0.5008345)
+bones/32/rotation = Quaternion(0.071277395, 0.8216855, -0.5653838, -0.009684047)
+bones/33/rotation = Quaternion(0.28908917, 0.55330455, -0.20908993, 0.7527038)
+bones/34/rotation = Quaternion(0.12024976, -0.69903094, -0.056890074, 0.702609)
+bones/35/rotation = Quaternion(0.6295971, 3.7252903e-08, 4.172325e-06, 0.7769218)
+bones/36/rotation = Quaternion(0.62334144, 1.825392e-07, 4.470348e-06, 0.7819497)
+bones/37/rotation = Quaternion(0.62334156, 1.00582824e-07, 4.2319293e-06, 0.78194964)
+bones/38/rotation = Quaternion(4.656613e-09, 1, 4.295285e-08, -5.7654454e-08)
+bones/39/rotation = Quaternion(0.6288947, 0.029734796, 4.351139e-06, 0.77692175)
+bones/40/rotation = Quaternion(0.62273216, 0.027554482, 4.5001507e-06, 0.78194976)
+bones/41/rotation = Quaternion(0.62266874, 0.028961398, 4.3213377e-06, 0.78194946)
+bones/42/rotation = Quaternion(-0.02323703, 0.99973, 1.33009905e-08, -1.4671618e-07)
+bones/43/rotation = Quaternion(0.6630007, 0.044529956, -0.07369393, 0.7436508)
+bones/44/rotation = Quaternion(0.62036633, 0.06229363, -0.015572906, 0.7816794)
+bones/45/rotation = Quaternion(0.62192184, 0.04205143, 4.4703484e-06, 0.7819494)
+bones/46/rotation = Quaternion(-0.03375008, 0.99943036, 4.924054e-08, -5.6300287e-08)
+bones/47/rotation = Quaternion(0.6291981, 0.022413792, 4.11272e-06, 0.7769218)
+bones/48/rotation = Quaternion(0.62294656, 0.022176204, 4.470349e-06, 0.7819501)
+bones/49/rotation = Quaternion(0.6228987, 0.02350526, 4.1723247e-06, 0.7819493)
+bones/50/rotation = Quaternion(-0.018857837, 0.9998222, -1.5216912e-08, -2.369153e-07)
+bones/51/rotation = Quaternion(-0.12381923, -0.7195234, -0.2018356, 0.6528533)
+bones/52/rotation = Quaternion(0.18180703, -0.11012423, -0.060063303, 0.97530067)
+bones/53/rotation = Quaternion(0.5994302, -0.2739653, -0.19463223, 0.7264605)
+bones/54/scale = Vector3(1.0001454, 1.0004876, 1.0005835)
+bones/55/rotation = Quaternion(-0.0008040376, 0.14374574, 0.982915, -0.11495502)
+bones/56/rotation = Quaternion(0.019043827, 0.97825646, -0.17391318, 0.11138201)
+bones/57/rotation = Quaternion(-0.09481789, 0.72148216, -0.68588203, 0.0062480597)
+bones/58/rotation = Quaternion(4.664862e-08, 1, 5.9604645e-08, 2.7766912e-08)
+bones/60/rotation = Quaternion(0.00090072735, -0.08700639, 0.9878493, 0.12877446)
+bones/61/rotation = Quaternion(-0.04247115, 0.92608833, -0.11710363, -0.35615087)
+bones/62/rotation = Quaternion(0.17121865, 0.6325894, -0.75532424, -2.1755694e-05)
+bones/63/rotation = Quaternion(-6.703263e-08, 1, 8.940697e-08, 2.1454163e-09)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Mannequin" unique_id=58122226]
 libraries/ = SubResource("AnimationLibrary_h1q25")
@@ -100,7 +162,17 @@ parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
 parameters/TimeScale/scale = 1.0
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1957838361]
-transform = Transform3D(-1, -4.3711392e-08, 7.571035e-08, 0, 0.8660255, 0.50000006, -8.742278e-08, 0.50000006, -0.8660255, 0, 3, -3)
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1457932589]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9692008, -0.24627171, 0, 0.24627171, 0.9692008, 0, 1.6344507, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1596930366]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_x0jl3")
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=650519818]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 
 [editable path="Mannequin"]

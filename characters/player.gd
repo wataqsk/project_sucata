@@ -1,36 +1,50 @@
-class_name Player
 extends CharacterBody3D
 
-@export_category("Player Stats")
-@export_group("Movement Settings")
-@export_range(0, 360, 1) var turn_speed: float = 90.0
-@export_range(0, 360, 1) var walk_speed: float = 90.0
-@export_range(0, 360, 1) var run_speed: float = 90.0
+@export_group("Camera")
+@export_range(0.0, 1.0) var mouse_sensitivity := 0.25
 
-var state_machine: AnimationNodeStateMachinePlayback
+@export_group("Movement")
+@export var move_speed := 8.0
+@export var acceleration := 20.0
 
-func _ready() -> void:
-	state_machine = $AnimationTree.get("parameters/Movement/playback") as AnimationNodeStateMachinePlayback	
 
+var _camera_input_direction := Vector2.ZERO
+
+@onready var _camera_pivot: Node3D = %CameraPivot
+@onready var _camera: Camera3D = %Camera3D
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("left_click"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event.is_action_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	var is_camera_motion := (
+		event is InputEventMouseMotion and 
+		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
+	)
+	if is_camera_motion:
+		_camera_input_direction = event.screen_relative * mouse_sensitivity
+		
+		
 func _physics_process(delta: float) -> void:
-	handle_turn(delta)
-	handle_walk(delta)
+	_camera_pivot.rotation.x += _camera_input_direction.y * delta
+	_camera_pivot.rotation.x = clamp (_camera_pivot.rotation.x, -PI / 6.0, PI / 3.0)
+	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
+	
+	_camera_input_direction = Vector2.ZERO
+	
+	var raw_input := Input.get_vector("move_left", "move_right","move_up","move_down")
+	var forward := _camera.global_basis.z
+	var right := _camera.global_basis.x
+	
+	var move_direction := forward * raw_input.y + right * raw_input.x
+	move_direction.y = 0.0
+	move_direction = move_direction.normalized()
+	
+	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
 	move_and_slide()
-
-func handle_turn(delta: float) -> void:
-	var turn_dir = Input.get_axis("turn_left", "turn_right")
-	rotation_degrees.y -= turn_dir * turn_speed * delta
-
-func handle_walk(delta: float) -> void:
-	var input_dir = Input.get_axis("move_backward", "move_forward")
-	var walk_velocity = basis.z * input_dir * walk_speed * delta
-
-	velocity.x = walk_velocity.x
-	velocity.z = walk_velocity.z
-
-	if walk_velocity.length_squared() > 0:
-		$AnimationTree.set("parameters/Movement/conditions/is_walking", true)
-		$AnimationTree.set("parameters/Movement/conditions/idle", false)
-	else:
-		$AnimationTree.set("parameters/Movement/conditions/idle", true)
-		$AnimationTree.set("parameters/Movement/conditions/is_walking", false)
+	
