@@ -13,6 +13,10 @@ var _camera_input_direction := Vector2.ZERO
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Camera3D = %Camera3D
 
+var state_machine: AnimationNodeStateMachinePlayback
+
+func _ready() -> void:
+	state_machine = $AnimationTree.get("parameters/Movement/playback") as AnimationNodeStateMachinePlayback	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -28,8 +32,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	)
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * mouse_sensitivity
-		
-		
+
 func _physics_process(delta: float) -> void:
 	_camera_pivot.rotation.x += _camera_input_direction.y * delta
 	_camera_pivot.rotation.x = clamp (_camera_pivot.rotation.x, -PI / 6.0, PI / 3.0)
@@ -46,5 +49,13 @@ func _physics_process(delta: float) -> void:
 	move_direction = move_direction.normalized()
 	
 	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+	
+	if move_direction.length_squared() > 0:
+		$AnimationTree.set("parameters/Movement/conditions/is_walking", true)
+		$AnimationTree.set("parameters/Movement/conditions/idle", false)
+	else:
+		$AnimationTree.set("parameters/Movement/conditions/idle", true)
+		$AnimationTree.set("parameters/Movement/conditions/is_walking", false)
+	
 	move_and_slide()
 	
