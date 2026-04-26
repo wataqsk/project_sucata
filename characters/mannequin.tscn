@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cpg8cjho5elqa"]
+
+[ext_resource type="PackedScene" uid="uid://d2y1qklerpor2" path="res://models/mannequin_f.glb" id="1_8g27e"]
+
+[node name="mannequin_f" unique_id=1310423835 instance=ExtResource("1_8g27e")]

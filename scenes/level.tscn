@@ -52,4 +52,6 @@ mesh = SubResource("BoxMesh_o5qli")
 transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 3, 0)
 
 [node name="Player" parent="." unique_id=1561012246 instance=ExtResource("1_o5qli")]
-transform = Transform3D(-0.99999994, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -0.99999994, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+camera_pitch_min = -80.0
+camera_pitch_max = 80.0
