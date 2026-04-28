@@ -2,56 +2,54 @@
 
 [ext_resource type="PackedScene" uid="uid://cb8dmciubuxoe" path="res://characters/player.tscn" id="1_o5qli"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_o5qli"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
-albedo_color = Color(1, 1, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
-material = SubResource("StandardMaterial3D_0wfyh")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgp6g"]
-size = Vector3(20, 1, 20)
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2q6dc"]
+albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
-size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_2q6dc")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2q6dc"]
+sky_top_color = Color(0.8, 0.62, 0.2, 1)
+sky_horizon_color = Color(0.98039216, 0.9411765, 0.8627451, 1)
+sky_curve = 0.105
+ground_bottom_color = Color(0.98039216, 0.9411765, 0.8627451, 1)
+ground_horizon_color = Color(0.98039216, 0.9411765, 0.8627451, 1)
+ground_curve = 0.0
+
+[sub_resource type="Sky" id="Sky_w7c3h"]
+sky_material = SubResource("ProceduralSkyMaterial_2q6dc")
+
+[sub_resource type="Environment" id="Environment_2q6dc"]
+background_mode = 2
+sky = SubResource("Sky_w7c3h")
 
 [node name="Main" type="Node3D" unique_id=1636612167]
 
-[node name="Environment" type="Node3D" parent="." unique_id=678466669]
+[node name="World" type="Node3D" parent="." unique_id=678466669]
 
-[node name="Cube2" type="StaticBody3D" parent="Environment" unique_id=1820053725]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Cube2" unique_id=1720220543]
-shape = SubResource("BoxShape3D_o5qli")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Cube2" unique_id=500912097]
-mesh = SubResource("BoxMesh_sugp2")
-
-[node name="Cube" type="StaticBody3D" parent="Environment" unique_id=263960159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Cube" unique_id=72766853]
-shape = SubResource("BoxShape3D_o5qli")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Cube" unique_id=972563023]
-mesh = SubResource("BoxMesh_sugp2")
-
-[node name="Floor" type="StaticBody3D" parent="Environment" unique_id=1158472784]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor" unique_id=855353755]
+[node name="Floor" type="StaticBody3D" parent="World" unique_id=1158472784]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor" unique_id=855353755]
 shape = SubResource("BoxShape3D_sgp6g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Floor" unique_id=1672574310]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor" unique_id=1672574310]
 mesh = SubResource("BoxMesh_o5qli")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1117708135]
-transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 3, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1117708135]
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 0, 10, 0)
+shadow_enabled = true
 
-[node name="Player" parent="." unique_id=1561012246 instance=ExtResource("1_o5qli")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1381434313]
+environment = SubResource("Environment_2q6dc")
+
+[node name="Entities" type="Node3D" parent="." unique_id=1807136615]
+
+[node name="Player" parent="Entities" unique_id=1561012246 instance=ExtResource("1_o5qli")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 camera_pitch_min = -80.0
 camera_pitch_max = 80.0
