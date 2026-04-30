@@ -15,16 +15,16 @@ height = 1.8
 animation = &"ual1_standard/Idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_evndh"]
-animation = &"ual1_standard/Walk_Formal"
+animation = &"ual1_standard/Jog_Fwd"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h1q25"]
-animation = &"ual1_standard/Walk_Formal"
+animation = &"ual1_standard/Jog_Fwd"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j31ep"]
-animation = &"ual1_standard/Walk_Formal"
+animation = &"ual1_standard/Jog_Fwd"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6t23p"]
-animation = &"ual1_standard/Walk_Formal"
+animation = &"ual1_standard/Jog_Fwd"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_n8jd0"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_evndh")
@@ -57,7 +57,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-141.94214, 47.20703)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_x0jl3"]
-graph_offset = Vector2(-314.519, 86.52922)
+graph_offset = Vector2(-503.94135, 4.842004)
 nodes/output/position = Vector2(266.6667, 377.7778)
 nodes/Movement/node = SubResource("AnimationNodeStateMachine_x0jl3")
 nodes/Movement/position = Vector2(-133.33334, 155.55556)
@@ -65,7 +65,7 @@ node_connections = [&"output", 0, &"Movement"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1561012246]
 script = ExtResource("1_x0jl3")
-move_speed = 1.25
+move_speed = 50.0
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1457932589]
 unique_name_in_owner = true

@@ -1,23 +1,27 @@
 [gd_scene format=3 uid="uid://t711ksiggai1"]
 
 [ext_resource type="PackedScene" uid="uid://cb8dmciubuxoe" path="res://characters/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dfvmlowq4kowb" path="res://textures/grass_02.png" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://n7b2n41lo0yw" path="res://entities/box_01.blend" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://pj4g447vlkts" path="res://entities/book_black_01.blend" id="4_mx8sn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgp6g"]
 size = Vector3(100, 1, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2q6dc"]
-albedo_color = Color(0, 0, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8frs"]
+albedo_texture = ExtResource("1_w7c3h")
+uv1_scale = Vector3(500, 500, 500)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
-material = SubResource("StandardMaterial3D_2q6dc")
+material = SubResource("StandardMaterial3D_w8frs")
 size = Vector3(100, 1, 100)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2q6dc"]
-sky_top_color = Color(0.8, 0.62, 0.2, 1)
-sky_horizon_color = Color(0.98039216, 0.9411765, 0.8627451, 1)
+sky_top_color = Color(0.7019608, 0.60784316, 0.41960785, 1)
+sky_horizon_color = Color(0.95, 0.9302083, 0.9025, 1)
 sky_curve = 0.105
-ground_bottom_color = Color(0.98039216, 0.9411765, 0.8627451, 1)
-ground_horizon_color = Color(0.98039216, 0.9411765, 0.8627451, 1)
+ground_bottom_color = Color(0.9490196, 0.92941177, 0.9019608, 1)
+ground_horizon_color = Color(0.9490196, 0.92941177, 0.9019608, 1)
 ground_curve = 0.0
 
 [sub_resource type="Sky" id="Sky_w7c3h"]
@@ -38,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_sgp6g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor" unique_id=1672574310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.036064e-05, 0.012363017, -0.0021482706)
 mesh = SubResource("BoxMesh_o5qli")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1117708135]
@@ -53,3 +58,17 @@ environment = SubResource("Environment_2q6dc")
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 camera_pitch_min = -80.0
 camera_pitch_max = 80.0
+move_speed = 5.0
+acceleration = 25.0
+
+[node name="box_01" parent="." unique_id=2067244669 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062229916, 0.18288, 6.239646)
+
+[node name="box_02" parent="." unique_id=890237184 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6567196, 0.18287988, 5.624465)
+
+[node name="box_03" parent="." unique_id=1141353812 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.653564, 0.18287988, 3.6169558)
+
+[node name="book_black_01" parent="." unique_id=686138085 instance=ExtResource("4_mx8sn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15139651, 0.12031484, 5.8309)

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="projeto_sucata"
+config/name="project_clara"
 run/main_scene="uid://t711ksiggai1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
@@ -59,4 +59,3 @@ left_click={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-anti_aliasing/quality/msaa_3d=3
