@@ -1,7 +1,23 @@
 [gd_scene format=3 uid="uid://t711ksiggai1"]
 
-[ext_resource type="PackedScene" uid="uid://b606jc4h6elmq" path="res://scenes/props/road_long.tscn" id="1_i2aat"]
 [ext_resource type="PackedScene" uid="uid://cb8dmciubuxoe" path="res://scenes/characters/player/player.tscn" id="1_m802k"]
+[ext_resource type="PackedScene" uid="uid://hmwk8m308a1f" path="res://scenes/props/road_turn.tscn" id="3_2djvx"]
+[ext_resource type="PackedScene" uid="uid://ng2n3w1kl12w" path="res://scenes/props/road_long.tscn" id="3_uvc87"]
+[ext_resource type="PackedScene" uid="uid://b151m70q6yl3a" path="res://scenes/props/bridges_stairs.tscn" id="4_uvc87"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2djvx"]
+size = Vector3(80, 0.2, 80)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2djvx"]
+load_path = "res://.godot/imported/Dirt_15-128x128.png-e14f18b5784f4f7cb03df2b5f435e19d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50wog"]
+albedo_texture = SubResource("CompressedTexture2D_2djvx")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2djvx"]
+material = SubResource("StandardMaterial3D_50wog")
+size = Vector3(80, 0.2, 80)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2q6dc"]
 sky_top_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
@@ -21,16 +37,66 @@ sky = SubResource("Sky_w7c3h")
 
 [node name="World" type="Node3D" parent="." unique_id=678466669]
 
-[node name="Environment" type="Node3D" parent="World" unique_id=1220253773]
+[node name="Props" type="Node3D" parent="World" unique_id=1220253773]
 
-[node name="RoadLong3" parent="World/Environment" unique_id=1318203240 instance=ExtResource("1_i2aat")]
-transform = Transform3D(-1.9470716e-07, 0, -0.9999998, 0, 1, 0, 0.9999998, 0, -1.9470716e-07, 9.999994, 0, 2.9921566e-06)
+[node name="Road" type="Node3D" parent="World/Props" unique_id=1603796368]
 
-[node name="RoadLong2" parent="World/Environment" unique_id=251084638 instance=ExtResource("1_i2aat")]
-transform = Transform3D(-1.1920929e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -1.1920929e-07, -9.999999, 0, -1.1920929e-06)
+[node name="RoadLong" parent="World/Props/Road" unique_id=1318203240 instance=ExtResource("3_uvc87")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="RoadLong" parent="World/Environment" unique_id=644640746 instance=ExtResource("1_i2aat")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+[node name="RoadLong2" parent="World/Props/Road" unique_id=1832030216 instance=ExtResource("3_uvc87")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 0, -1.7484555e-07)
+
+[node name="RoadLong3" parent="World/Props/Road" unique_id=1656013039 instance=ExtResource("3_uvc87")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20, 0, 2.7818132e-08)
+
+[node name="RoadLong4" parent="World/Props/Road" unique_id=1554293526 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.000004, 0, 25)
+
+[node name="RoadLong5" parent="World/Props/Road" unique_id=1282317800 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.000004, 0, 45)
+
+[node name="RoadLong6" parent="World/Props/Road" unique_id=2127790540 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.999996, 0, 65.00001)
+
+[node name="RoadLong7" parent="World/Props/Road" unique_id=169344223 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 25)
+
+[node name="RoadLong8" parent="World/Props/Road" unique_id=957102304 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 45)
+
+[node name="RoadLong9" parent="World/Props/Road" unique_id=1922930514 instance=ExtResource("3_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 65)
+
+[node name="RoadLong10" parent="World/Props/Road" unique_id=451000909 instance=ExtResource("3_uvc87")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.999996, 0, 90.00001)
+
+[node name="RoadLong11" parent="World/Props/Road" unique_id=242197186 instance=ExtResource("3_uvc87")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 90)
+
+[node name="RoadLong12" parent="World/Props/Road" unique_id=929390657 instance=ExtResource("3_uvc87")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, 90)
+
+[node name="RoadTurn" parent="World/Props/Road" unique_id=53297675 instance=ExtResource("3_2djvx")]
+transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 39.999996, 0, 4.999997)
+
+[node name="RoadTurn2" parent="World/Props/Road" unique_id=1407749337 instance=ExtResource("3_2djvx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -40, 0, 5.0000014)
+
+[node name="RoadTurn3" parent="World/Props/Road" unique_id=710510550 instance=ExtResource("3_2djvx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -40, 0, 85)
+
+[node name="RoadTurn4" parent="World/Props/Road" unique_id=2083182910 instance=ExtResource("3_2djvx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 40, 0, 85)
+
+[node name="Floor" type="StaticBody3D" parent="World/Props" unique_id=409800077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Props/Floor" unique_id=594720693]
+shape = SubResource("BoxShape3D_2djvx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Props/Floor" unique_id=880494751]
+mesh = SubResource("BoxMesh_2djvx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1117708135]
 transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 0, 10, 0)
@@ -47,3 +113,6 @@ camera_pitch_min = -80.0
 camera_pitch_max = 80.0
 move_speed = 5.0
 acceleration = 25.0
+
+[node name="Bridges_stairs_12" parent="Entities" unique_id=210261646 instance=ExtResource("4_uvc87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
