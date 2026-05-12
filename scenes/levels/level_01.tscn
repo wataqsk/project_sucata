@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://t711ksiggai1"]
+
+[ext_resource type="PackedScene" uid="uid://b606jc4h6elmq" path="res://scenes/props/road_long.tscn" id="1_i2aat"]
+[ext_resource type="PackedScene" uid="uid://cb8dmciubuxoe" path="res://scenes/characters/player/player.tscn" id="1_m802k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2q6dc"]
+sky_top_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+sky_horizon_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+ground_bottom_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+ground_horizon_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+ground_curve = 0.0
+
+[sub_resource type="Sky" id="Sky_w7c3h"]
+sky_material = SubResource("ProceduralSkyMaterial_2q6dc")
+
+[sub_resource type="Environment" id="Environment_2q6dc"]
+background_mode = 2
+sky = SubResource("Sky_w7c3h")
+
+[node name="Main" type="Node3D" unique_id=1636612167]
+
+[node name="World" type="Node3D" parent="." unique_id=678466669]
+
+[node name="Environment" type="Node3D" parent="World" unique_id=1220253773]
+
+[node name="RoadLong3" parent="World/Environment" unique_id=1318203240 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1.9470716e-07, 0, -0.9999998, 0, 1, 0, 0.9999998, 0, -1.9470716e-07, 9.999994, 0, 2.9921566e-06)
+
+[node name="RoadLong2" parent="World/Environment" unique_id=251084638 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-1.1920929e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -1.1920929e-07, -9.999999, 0, -1.1920929e-06)
+
+[node name="RoadLong" parent="World/Environment" unique_id=644640746 instance=ExtResource("1_i2aat")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1117708135]
+transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 0, 10, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1381434313]
+environment = SubResource("Environment_2q6dc")
+
+[node name="Entities" type="Node3D" parent="." unique_id=1807136615]
+
+[node name="Player" parent="Entities" unique_id=1561012246 instance=ExtResource("1_m802k")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+camera_pitch_min = -80.0
+camera_pitch_max = 80.0
+move_speed = 5.0
+acceleration = 25.0
