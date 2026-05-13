@@ -23,7 +23,6 @@
 size = Vector3(80, 0.2, 80)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2djvx"]
-load_path = "res://.godot/imported/Dirt_15-128x128.png-e14f18b5784f4f7cb03df2b5f435e19d.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50wog"]
 albedo_texture = SubResource("CompressedTexture2D_2djvx")
