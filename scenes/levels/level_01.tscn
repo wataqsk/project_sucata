@@ -132,8 +132,6 @@ environment = SubResource("Environment_2q6dc")
 
 [node name="Player" parent="Entities" unique_id=1561012246 instance=ExtResource("1_m802k")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
-camera_pitch_min = -80.0
-camera_pitch_max = 80.0
 move_speed = 5.0
 acceleration = 25.0
 

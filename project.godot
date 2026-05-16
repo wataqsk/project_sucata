@@ -14,6 +14,10 @@ config/name="project_clara"
 run/main_scene="uid://t711ksiggai1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[debug_draw_3d]
+
+settings/addon_root_folder="res://addons/addons/debug_draw_3d"
+
 [display]
 
 window/size/viewport_width=1920
@@ -60,7 +64,7 @@ jump={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-3d/default_gravity=9.799999999999997
+3d/default_gravity=9.799999999999995
 
 [rendering]
 
