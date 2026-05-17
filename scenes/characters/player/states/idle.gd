@@ -8,3 +8,5 @@ func physics_update(_delta: float) -> void:
 		finished.emit(PlayerState.JUMPING)
 	elif player.move_direction.length_squared() > 0.0:
 		finished.emit(PlayerState.WALKING)
+	elif player.velocity.y < 0.0:
+		finished.emit(PlayerState.FALLING)

@@ -65,9 +65,6 @@ xfade_time = 0.5
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hv5x3"]
 xfade_time = 0.5
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4kqyw"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ykrpk"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i1nod"]
@@ -88,11 +85,11 @@ states/Landing/node = SubResource("AnimationNodeAnimation_qd3e3")
 states/Landing/position = Vector2(597.99615, 209.28033)
 states/Walking/node = SubResource("AnimationNodeBlendSpace2D_n8jd0")
 states/Walking/position = Vector2(342.78656, 209.48058)
-transitions = ["Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_3xnwo"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_djydg"), "Idle", "Jumping", SubResource("AnimationNodeStateMachineTransition_bsn6e"), "Jumping", "Falling", SubResource("AnimationNodeStateMachineTransition_blysn"), "Falling", "Landing", SubResource("AnimationNodeStateMachineTransition_hv5x3"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_4kqyw"), "Walking", "Jumping", SubResource("AnimationNodeStateMachineTransition_ykrpk"), "Landing", "Idle", SubResource("AnimationNodeStateMachineTransition_i1nod"), "Landing", "Walking", SubResource("AnimationNodeStateMachineTransition_svuau")]
+transitions = ["Idle", "Walking", SubResource("AnimationNodeStateMachineTransition_3xnwo"), "Walking", "Idle", SubResource("AnimationNodeStateMachineTransition_djydg"), "Idle", "Jumping", SubResource("AnimationNodeStateMachineTransition_bsn6e"), "Jumping", "Falling", SubResource("AnimationNodeStateMachineTransition_blysn"), "Falling", "Landing", SubResource("AnimationNodeStateMachineTransition_hv5x3"), "Walking", "Jumping", SubResource("AnimationNodeStateMachineTransition_ykrpk"), "Landing", "Idle", SubResource("AnimationNodeStateMachineTransition_i1nod"), "Landing", "Walking", SubResource("AnimationNodeStateMachineTransition_svuau")]
 graph_offset = Vector2(-36.94214, -12.792969)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_x0jl3"]
-graph_offset = Vector2(-193.33334, 101.111115)
+graph_offset = Vector2(-332.22223, 93.333336)
 nodes/output/position = Vector2(266.6667, 377.7778)
 nodes/Movement/node = SubResource("AnimationNodeStateMachine_x0jl3")
 nodes/Movement/position = Vector2(-133.33334, 155.55556)
@@ -102,13 +99,14 @@ node_connections = [&"output", 0, &"Movement"]
 script = ExtResource("1_x0jl3")
 camera_pitch_min = -80.0
 camera_pitch_max = 80.0
+move_speed = 5.0
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1457932589]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.9659257, -0.258819, 0, 0.258819, 0.9659257, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9659256, -0.25881895, 0, 0.25881895, 0.9659256, 0, 1.4, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=932079272]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 shape = SubResource("SphereShape3D_x0jl3")
 spring_length = 2.5
 
@@ -117,7 +115,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=596558967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8822021, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8854805, 0)
 shape = SubResource("CapsuleShape3D_3eadt")
 
 [node name="Mannequin" parent="." unique_id=1310423835 instance=ExtResource("2_3eadt")]
